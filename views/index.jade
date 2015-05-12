@@ -1,0 +1,29 @@
+extends layout
+
+block body
+  div
+    h1 Simple E-mail Sequence
+    ul
+      li
+        a(href='/') Home
+      li
+        a(href='/addEmail') Add e-mail
+      li
+        a(href='/addTemplate') Add Template
+      li
+        a(href='/addSchedule') Schedule a Sequence               
+
+    div(ng-view)
+
+  script(src='https://code.jquery.com/jquery-2.1.4.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+
+  script(src='js/lib/angular/angular.js')
+
+  script(src='js/lib/datetimepicker.js')
+  script(src='js/app.js')
+  script(src='js/services.js')
+  script(src='js/controllers.js')
+  script(src='js/filters.js')
+  script(src='js/directives.js')

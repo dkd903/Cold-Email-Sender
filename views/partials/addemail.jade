@@ -1,0 +1,26 @@
+h2 Add New e-mail
+div
+	p
+		label(for='email') E-mail: 
+		input(ng-model='form.email', name='email', placeholder='Enter E-mail address')
+	p
+		label(for='fname') Firstname: 
+		input(ng-model='form.fname', name='fname', placeholder='Enter Firstname')
+	p
+		label(for='lname') Lastname: 
+		input(ng-model='form.lname', name='lname', placeholder='Enter Lastname')
+	p
+		label(for='comp') Company: 
+		input(ng-model='form.comp', name='comp', placeholder='Enter Company Name')		 
+	p
+		button(ng-click='submitEmail()') Add
+
+p You've {{emails.length}} email IDs
+div(ng-repeat='email in emails')
+	div 
+		ul
+			li {{email.fname}}  
+			li {{email.lname}}  
+			li {{email.email}}  
+			li {{email.comp}}  
+		a(href='deleteEmail/{{email.slno}}') Delete

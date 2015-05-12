@@ -1,0 +1,14 @@
+h2 Add a new template
+label(for='title') Title: 
+input(ng-model='form.title', name='title')
+p Body:
+textarea(ng-model='form.template', cols='35', rows='4')
+p
+	button(ng-click='addTemplate()') Add
+
+p You have {{templates.length}} templates
+div(ng-repeat='template in templates')
+	div {{template.title}} 
+		a(href='editTemplate/{{template.slno}}') Edit
+		|  
+		a(href='deleteTemplate/{{template.slno}}') Delete

@@ -1,0 +1,18 @@
+h2 Send an e-mail sequence
+div(class='left')
+	label(for='users') Select Users: 
+	span(ng-repeat='email in emails') 
+		input(ng-model="newObject[email.email]", type="checkbox", value="{{email.slno}}")
+		|  {{email.email}}
+div(class='right')
+	label(for='template') Choose Template:
+	|  
+	select(ng-model='form.template', required='required', ng-init='form.template = templates[0].title')
+		option(ng-repeat='template in templates', value="{{template.slno}}") {{template.title}}
+div(class='clear')
+button(ng-click='sendEmail()') Send Now
+p Or, Schedule
+p 
+	datetimepicker(data-ng-model="data.embeddedDate", data-datetimepicker-config="{ startView:'day', minView:'day' }")
+	Selected Date: {{ data.date | date:'yyyy-MM-dd a' }}
+	button(ng-click='scheduleEmail()') Schedule
